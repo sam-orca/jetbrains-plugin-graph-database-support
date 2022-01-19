@@ -15,7 +15,7 @@ public class QueryHighlighterComponentImpl implements QueryHighlighterComponent 
 
     @Override
     public void initComponent() {
-        EditorFactory editorFactory = ApplicationManager.getApplication().getComponent(EditorFactory.class);
+        EditorFactory editorFactory = ApplicationManager.getApplication().getService(EditorFactory.class);
 
         syncedElementHighlighter = new SyncedElementHighlighter();
         queryHighlighterCaretListener = new QueryHighlighterCaretListener(syncedElementHighlighter);
