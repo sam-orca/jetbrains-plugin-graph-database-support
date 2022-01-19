@@ -27,7 +27,7 @@ public class QueryHighlighterComponentImpl implements QueryHighlighterComponent 
 
     @Override
     public void disposeComponent() {
-        EditorFactory editorFactory = ApplicationManager.getApplication().getComponent(EditorFactory.class);
+        EditorFactory editorFactory = ApplicationManager.getApplication().getService(EditorFactory.class);
         if (queryHighlighterCaretListener != null) {
             editorFactory.getEventMulticaster().removeCaretListener(queryHighlighterCaretListener);
         }

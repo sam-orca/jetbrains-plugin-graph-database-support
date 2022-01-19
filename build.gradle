@@ -24,7 +24,7 @@ allprojects {
         mavenCentral()
         mavenLocal()
         jcenter()
-        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
+        maven { url 'https://www.jetbrains.com/intellij-repository/releases/' }
     }
 
     apply plugin: 'java'

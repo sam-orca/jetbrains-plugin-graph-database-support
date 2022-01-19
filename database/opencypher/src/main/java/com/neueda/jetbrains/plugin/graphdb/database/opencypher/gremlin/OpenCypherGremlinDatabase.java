@@ -59,6 +59,7 @@ public class OpenCypherGremlinDatabase implements GraphDatabaseApi {
                 .serializer(configuration.getSerializer())
                 .enableSsl(configuration.getSSL())
                 .port(uri.getPort())
+                .maxContentLength(65536*10)
                 .create();
 
         flavor = configuration.getFlavor();

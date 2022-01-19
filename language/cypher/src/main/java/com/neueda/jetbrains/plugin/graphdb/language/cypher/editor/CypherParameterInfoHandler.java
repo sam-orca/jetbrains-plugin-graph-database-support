@@ -1,6 +1,5 @@
 package com.neueda.jetbrains.plugin.graphdb.language.cypher.editor;
 
-import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.lang.parameterInfo.*;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.tree.IElementType;
@@ -42,13 +41,13 @@ public class CypherParameterInfoHandler
 
     @NotNull
     @Override
-    public Set<Class> getArgumentListAllowedParentClasses() {
+    public Set<Class<?>> getArgumentListAllowedParentClasses() {
         return ContainerUtil.newHashSet();
     }
 
     @NotNull
     @Override
-    public Set<? extends Class> getArgListStopSearchClasses() {
+    public Set<? extends Class<?>> getArgListStopSearchClasses() {
         return ContainerUtil.newHashSet();
     }
 
@@ -58,22 +57,6 @@ public class CypherParameterInfoHandler
         return CypherInvocation.class;
     }
 
-    @Override
-    public boolean couldShowInLookup() {
-        return true;
-    }
-
-    @Nullable
-    @Override
-    public Object[] getParametersForLookup(LookupElement item, ParameterInfoContext context) {
-        return ArrayUtil.EMPTY_OBJECT_ARRAY;
-    }
-
-    @Nullable
-    @Override
-    public Object[] getParametersForDocumentation(CypherInvocation p, ParameterInfoContext context) {
-        return ArrayUtil.EMPTY_OBJECT_ARRAY;
-    }
 
     @Nullable
     @Override
@@ -102,17 +85,6 @@ public class CypherParameterInfoHandler
                         o.argumentsToken().getNode(),
                         context.getOffset(),
                         CypherTypes.OP_COMMA));
-    }
-
-    @Nullable
-    @Override
-    public String getParameterCloseChars() {
-        return ",(";
-    }
-
-    @Override
-    public boolean tracksParameterIndex() {
-        return true;
     }
 
 
